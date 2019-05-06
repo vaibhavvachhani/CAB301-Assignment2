@@ -82,13 +82,18 @@ namespace Assignment2
 
         static void Main(string[] args)
         {
-            int[] t1 = generateRandomArrayWithoutDup(20, -100, 100);
-            for (int i = 0; i < t1.Count(); i++)
+            Random r1 = new Random();
 
+            for (int i = 0; i < 10; i++)
             {
-                Console.Write(t1[i].ToString() + ", ");
-                Console.WriteLine("");
+                int randomsize = r1.Next(150, 10000);
 
+                int[] t1 = generateRandomArrayWithoutDup(randomsize, -50000, 50000);
+                Console.WriteLine("Counters for array of size (without duplicates): " + randomsize);
+                int minD1 = minDistance(t1);
+                int minD2 = minDistance2(t1);
+                Console.WriteLine("");
+                Console.WriteLine("");
             }
         }
     }
