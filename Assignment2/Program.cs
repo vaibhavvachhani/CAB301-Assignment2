@@ -84,7 +84,7 @@ namespace Assignment2
         {
             Random r1 = new Random();
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 30; i++)
             {
                 int randomsize = r1.Next(150, 10000);
 
