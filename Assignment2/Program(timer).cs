@@ -1,19 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Assignment2
 {
-    class Program
+    class Program_timer_
     {
-
+        
         public static int minDistance(int[] arr)
         {
+            var watch = System.Diagnostics.Stopwatch.StartNew(); //in built stopwatch ulitility 
+            watch.Start(); //start the stopwatch
             int counter = 0;
-            int dmin = 100000;//large number for distance comparision
-            for (int i = 0; i < arr.GetLength(0) ; i++)
+            int dmin = 10000; //large number for distance comparision
+            for (int i = 0; i < arr.GetLength(0); i++)
             {
                 for (int j = 0; j < arr.GetLength(0); j++)
                 {
@@ -23,27 +26,31 @@ namespace Assignment2
                     }
                 }
             }
-            Console.WriteLine("minDistance counter "+ counter);
+            watch.Stop();
+            Console.WriteLine("time taken (ms): " + watch.ElapsedMilliseconds);
             return dmin; //return the variable
 
         }
 
         public static int minDistance2(int[] arr)
         {
+            var watch = System.Diagnostics.Stopwatch.StartNew(); //in built stopwatch ulitility 
+            watch.Start(); //start the stopwatch
             int counter1 = 0;
-            int dmin = 100000;// large number for distance comparision
+            int dmin = 10000; // large number for distance comparision
             for (int i = 0; i < arr.GetLength(0) - 1; i++)
             {
-                for (int j = i+1; j < arr.GetLength(0); j++)
+                for (int j = i + 1; j < arr.GetLength(0); j++)
                 {
                     int temp = Math.Abs(arr[i] - arr[j]); ;
-                    if (++counter1 > 0 &&  temp < dmin) //basic operation
+                    if (++counter1 > 0 && temp < dmin) //basic operation
                     {
                         dmin = temp; //assign the distance to dmin variable if true
                     }
                 }
             }
-            Console.WriteLine("minDistance2 counter "+ counter1);
+            watch.Stop();
+            Console.WriteLine("time taken (ms): " + watch.ElapsedMilliseconds);
             return dmin; //return the variable
 
         }
@@ -51,7 +58,7 @@ namespace Assignment2
         public static int[] generateRandomArray(int size, int start, int stop)
         {
             int[] arr = new int[size];
-            
+
             Random randomNum = new Random();
             for (int i = 0; i < size; i++)
             {
@@ -67,38 +74,20 @@ namespace Assignment2
             int num = 0;
             for (int i = 0; i < size; i++)
             {
-                
+
                 num = randomNum.Next(start, stop);
                 while (arr.Contains(num))
                 {
                     num = randomNum.Next(start, stop);
                 }
                 arr[i] = num;
-                
+
             }
             return arr;
 
         }
 
-        static void Main(string[] args)
-        {
-            Random r1 = new Random();
-            /*
-            for (int i = 0; i < 30; i++)
-            {
-                int randomsize = r1.Next(150, 10000);
+        
 
-                int[] t1 = generateRandomArrayWithoutDup(randomsize, -50000, 50000);
-                Console.WriteLine("Counters for array of size (without duplicates): " + randomsize);
-                int minD1 = Program_timer_.minDistance(t1);
-                int minD2 = Program_timer_.minDistance2(t1);
-                Console.WriteLine("");
-                Console.WriteLine("");
-            }
-            */
-            int[] t1 = { -9,-9,-9,-9,-9,-9,-9};
-            int answer = Convert.ToInt32(minDistance(t1));
-            Console.WriteLine(answer);
-        }
     }
 }
