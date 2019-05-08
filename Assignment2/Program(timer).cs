@@ -27,7 +27,7 @@ namespace Assignment2
                 }
             }
             watch.Stop();
-            Console.WriteLine("time taken (ms): " + watch.ElapsedMilliseconds);
+            Console.WriteLine("time taken minDistance (ms): " + watch.ElapsedMilliseconds);
             return dmin; //return the variable
 
         }
@@ -50,7 +50,7 @@ namespace Assignment2
                 }
             }
             watch.Stop();
-            Console.WriteLine("time taken (ms): " + watch.ElapsedMilliseconds);
+            Console.WriteLine("time taken minDistance2 (ms): " + watch.ElapsedMilliseconds);
             return dmin; //return the variable
 
         }

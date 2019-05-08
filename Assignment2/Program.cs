@@ -83,10 +83,10 @@ namespace Assignment2
         static void Main(string[] args)
         {
             Random r1 = new Random();
-            /*
-            for (int i = 0; i < 30; i++)
+            
+            for (int i = 0; i < 15; i++)
             {
-                int randomsize = r1.Next(150, 10000);
+                int randomsize = r1.Next(5000, 15000);
 
                 int[] t1 = generateRandomArrayWithoutDup(randomsize, -50000, 50000);
                 Console.WriteLine("Counters for array of size (without duplicates): " + randomsize);
@@ -95,10 +95,14 @@ namespace Assignment2
                 Console.WriteLine("");
                 Console.WriteLine("");
             }
-            */
+            /*
+             *testing code 
+             * 
+             * 
             int[] t1 = { -9,-9,-9,-9,-9,-9,-9};
             int answer = Convert.ToInt32(minDistance(t1));
             Console.WriteLine(answer);
+            */
         }
     }
 }
