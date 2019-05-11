@@ -86,7 +86,7 @@ namespace Assignment2
             
             for (int i = 0; i < 15; i++)
             {
-                int randomsize = r1.Next(5000, 15000);
+                int randomsize = r1.Next(6000, 15000);
 
                 int[] t1 = generateRandomArrayWithoutDup(randomsize, -50000, 50000);
                 Console.WriteLine("Counters for array of size (without duplicates): " + randomsize);
