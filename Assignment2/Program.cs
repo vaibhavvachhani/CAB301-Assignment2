@@ -11,51 +11,47 @@ namespace Assignment2
 
         public static int minDistance(int[] arr)
         {
-            int counter = 0;
             int dmin = 100000;//large number for distance comparision
-            for (int i = 0; i < arr.GetLength(0) ; i++)
+            for (int i = 0; i < arr.GetLength(0) ; i++) //loop over the array
             {
-                for (int j = 0; j < arr.GetLength(0); j++)
+                for (int j = 0; j < arr.GetLength(0); j++) //loop over the array
                 {
-                    if (++counter > 0 && i != j && (Math.Abs(arr[i] - arr[j]) < dmin)) //basic operation
+                    if (i != j && (Math.Abs(arr[i] - arr[j]) < dmin)) //basic operation
                     {
                         dmin = Math.Abs(arr[i] - arr[j]); //assign the distance to dmin variable if true
                     }
                 }
             }
-            Console.WriteLine("minDistance counter "+ counter);
             return dmin; //return the variable
 
         }
 
         public static int minDistance2(int[] arr)
         {
-            int counter1 = 0;
             int dmin = 100000;// large number for distance comparision
-            for (int i = 0; i < arr.GetLength(0) - 1; i++)
+            for (int i = 0; i < arr.GetLength(0) - 1; i++) //loop over the array
             {
-                for (int j = i+1; j < arr.GetLength(0); j++)
+                for (int j = i + 1; j < arr.GetLength(0); j++) //loop over the rest of the array
                 {
                     int temp = Math.Abs(arr[i] - arr[j]); ;
-                    if (++counter1 > 0 &&  temp < dmin) //basic operation
+                    if (temp < dmin) //basic operation
                     {
                         dmin = temp; //assign the distance to dmin variable if true
                     }
                 }
             }
-            Console.WriteLine("minDistance2 counter "+ counter1);
             return dmin; //return the variable
 
         }
 
-        public static int[] generateRandomArray(int size, int start, int stop)
+        public static int[] generateRandomArray(long size, int start, int stop)
         {
             int[] arr = new int[size];
             
             Random randomNum = new Random();
             for (int i = 0; i < size; i++)
             {
-                arr[i] = randomNum.Next(start, stop);
+                arr[i] = randomNum.Next((start), stop);
             }
             return arr;
 
@@ -82,27 +78,30 @@ namespace Assignment2
 
         static void Main(string[] args)
         {
+            /*
             Random r1 = new Random();
             
-            for (int i = 0; i < 15; i++)
+            for (int i = 0; i < 30; i++)
             {
-                int randomsize = r1.Next(6000, 15000);
+                long randomsize = r1.Next(500, 5000);
 
-                int[] t1 = generateRandomArrayWithoutDup(randomsize, -50000, 50000);
-                Console.WriteLine("Counters for array of size (without duplicates): " + randomsize);
-                int minD1 = Program_timer_.minDistance(t1);
-                int minD2 = Program_timer_.minDistance2(t1);
+                int[] t1 = generateRandomArray(randomsize, -50000, 50000);
+                Console.WriteLine("Counters for array of size" + randomsize);
+                long minD1 = minDistance(t1);
+                long min2 = minDistance2(t1);
                 Console.WriteLine("");
                 Console.WriteLine("");
             }
-            /*
+            
+            
              *testing code 
              * 
-             * 
-            int[] t1 = { -9,-9,-9,-9,-9,-9,-9};
-            int answer = Convert.ToInt32(minDistance(t1));
-            Console.WriteLine(answer);
+             * /
             */
+            int[] t1 = { -9, 9713, 01836, 859, -9484, -516, 200, 100458 };
+            int answer = Convert.ToInt32(minDistance2(t1));
+            Console.WriteLine(answer);
+            
         }
     }
 }
