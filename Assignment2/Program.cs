@@ -29,9 +29,9 @@ namespace Assignment2
         public static int minDistance2(int[] arr)
         {
             int dmin = 100000;// large number for distance comparision
-            for (int i = 0; i < arr.GetLength(0) - 2; i++) //loop over the array
+            for (int i = 0; i < arr.GetLength(0)-1; i++) //loop over the array
             {
-                for (int j = i + 1; j < arr.GetLength(0) -1; j++) //loop over the rest of the array
+                for (int j = i + 1; j < arr.GetLength(0); j++) //loop over the rest of the array
                 {
                     int temp = Math.Abs(arr[i] - arr[j]); ;
                     if (temp < dmin) //basic operation
