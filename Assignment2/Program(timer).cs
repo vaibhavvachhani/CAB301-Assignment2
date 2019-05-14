@@ -14,19 +14,18 @@ namespace Assignment2
         {
             var watch = System.Diagnostics.Stopwatch.StartNew(); //in built stopwatch ulitility 
             watch.Start(); //start the stopwatch
-            int counter = 0;
-            int dmin = 10000; //large number for distance comparision
+            int dmin = 2147483647; //large number for distance comparision (max value allowed)
             for (int i = 0; i < arr.GetLength(0); i++)
             {
                 for (int j = 0; j < arr.GetLength(0); j++)
                 {
-                    if (++counter > 0 && i != j && (Math.Abs(arr[i] - arr[j]) < dmin)) //basic operation
+                    if (i != j && (Math.Abs(arr[i] - arr[j]) < dmin)) //basic operation
                     {
                         dmin = Math.Abs(arr[i] - arr[j]); //assign the distance to dmin variable if true
                     }
                 }
             }
-            watch.Stop();
+            watch.Stop(); //stop the stopwatch
             Console.WriteLine("time taken minDistance (ms): " + watch.ElapsedMilliseconds);
             return dmin; //return the variable
 
@@ -36,20 +35,19 @@ namespace Assignment2
         {
             var watch = System.Diagnostics.Stopwatch.StartNew(); //in built stopwatch ulitility 
             watch.Start(); //start the stopwatch
-            int counter1 = 0;
-            int dmin = 10000; // large number for distance comparision
+            int dmin = 2147483647; // large number for distance comparision (max value allowed)
             for (int i = 0; i < arr.GetLength(0) - 1; i++)
             {
                 for (int j = i + 1; j < arr.GetLength(0); j++)
                 {
                     int temp = Math.Abs(arr[i] - arr[j]); ;
-                    if (++counter1 > 0 && temp < dmin) //basic operation
+                    if (temp < dmin) //basic operation
                     {
                         dmin = temp; //assign the distance to dmin variable if true
                     }
                 }
             }
-            watch.Stop();
+            watch.Stop(); //stop the stopwatch
             Console.WriteLine("time taken minDistance2 (ms): " + watch.ElapsedMilliseconds);
             return dmin; //return the variable
 

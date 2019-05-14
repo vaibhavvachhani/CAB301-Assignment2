@@ -11,7 +11,7 @@ namespace Assignment2
 
         public static int minDistance(int[] arr)
         {
-            int dmin = 100000;//large number for distance comparision
+            int dmin = 2147483647; //large number for distance comparision (max value allowed)
             for (int i = 0; i < arr.GetLength(0) ; i++) //loop over the array
             {
                 for (int j = 0; j < arr.GetLength(0); j++) //loop over the array
@@ -28,7 +28,7 @@ namespace Assignment2
 
         public static int minDistance2(int[] arr)
         {
-            int dmin = 100000;// large number for distance comparision
+            int dmin = 2147483647; //large number for distance comparision (max value allowed)
             for (int i = 0; i < arr.GetLength(0)-1; i++) //loop over the array
             {
                 for (int j = i + 1; j < arr.GetLength(0); j++) //loop over the rest of the array
@@ -85,22 +85,14 @@ namespace Assignment2
             {
                 long randomsize = r1.Next(500, 10000);
 
-                int[] t1 = generateRandomArray(randomsize, -50000, 50000);
+                int[] t1 = generateRandomArrayWithoutDup((int)randomsize, -50000, 50000);
                 Console.WriteLine("Counters for array of size" + randomsize);
                 long minD1 = Program_timer_.minDistance(t1);
                 long min2 = Program_timer_.minDistance2(t1);
                 Console.WriteLine("");
                 Console.WriteLine("");
             }
-            
-            
-             /*
-         
-            
-            int[] t1 = { -9, 9713, 01836, 859, -9484, -516, 200, 100458 };
-            int answer = Convert.ToInt32(minDistance2(t1));
-            Console.WriteLine(answer);
-            */
+           
         }
     }
 }

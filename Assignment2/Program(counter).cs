@@ -11,12 +11,12 @@ namespace Assignment2
         public static int minDistance(int[] arr)
         {
             int counter = 0;
-            int dmin = 100000;//large number for distance comparision
+            int dmin = 2147483647; //large number for distance comparision (max value allowed)
             for (int i = 0; i < arr.GetLength(0); i++)
             {
                 for (int j = 0; j < arr.GetLength(0); j++)
                 {
-                    if (++counter > 0 && i != j && (Math.Abs(arr[i] - arr[j]) < dmin)) //basic operation
+                    if ((++counter > 0) && i != j && (Math.Abs(arr[i] - arr[j]) < dmin)) //basic operation
                     {
                         dmin = Math.Abs(arr[i] - arr[j]); //assign the distance to dmin variable if true
                     }
@@ -30,13 +30,13 @@ namespace Assignment2
         public static int minDistance2(int[] arr)
         {
             int counter1 = 0;
-            int dmin = 100000;// large number for distance comparision
+            int dmin = 2147483647; //large number for distance comparision (max value allowed)
             for (int i = 0; i < arr.GetLength(0) - 1; i++)
             {
                 for (int j = i + 1; j < arr.GetLength(0); j++)
                 {
                     int temp = Math.Abs(arr[i] - arr[j]); ;
-                    if (++counter1 > 0 && temp < dmin) //basic operation
+                    if ((++counter1 > 0) && temp < dmin) //basic operation
                     {
                         dmin = temp; //assign the distance to dmin variable if true
                     }
