@@ -31,9 +31,9 @@ namespace Assignment2
         {
             int counter1 = 0;
             int dmin = 100000;// large number for distance comparision
-            for (int i = 0; i < arr.GetLength(0) - 1; i++)
+            for (int i = 0; i < arr.GetLength(0) - 2; i++)
             {
-                for (int j = i + 1; j < arr.GetLength(0); j++)
+                for (int j = i + 1; j < arr.GetLength(0) -1; j++)
                 {
                     int temp = Math.Abs(arr[i] - arr[j]); ;
                     if (++counter1 > 0 && temp < dmin) //basic operation
