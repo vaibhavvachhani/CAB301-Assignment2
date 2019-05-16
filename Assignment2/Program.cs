@@ -78,7 +78,8 @@ namespace Assignment2
 
         static void Main(string[] args)
         {
-            
+            /*
+             *  uncomment this to perform 30 timer tests
             Random r1 = new Random();
             
             for (int i = 0; i < 30; i++)
@@ -92,7 +93,32 @@ namespace Assignment2
                 Console.WriteLine("");
                 Console.WriteLine("");
             }
-           
+
+           */
+
+            /*
+              uncomment this to perform 30 counter tests
+            Random r1 = new Random();
+            
+            for (int i = 0; i < 30; i++)
+            {
+                long randomsize = r1.Next(500, 10000);
+
+                int[] t1 = generateRandomArrayWithoutDup((int)randomsize, -50000, 50000);
+                Console.WriteLine("Counters for array of size" + randomsize);
+                long minD1 = Program_counter_.minDistance(t1);
+                long min2 = Program_counter_.minDistance2(t1);
+                Console.WriteLine("");
+                Console.WriteLine("");
+            }
+
+           */
+
+            int[] testArray = { 2, -20, 45, 80, 100 }; //assign you test array here
+            int answer = minDistance(testArray);
+            int answer2 = minDistance2(testArray);
+            Console.WriteLine("minDistance result: " +answer);
+            Console.WriteLine("minDistance2 result: " + answer2);
         }
     }
 }
